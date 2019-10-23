@@ -1,0 +1,28 @@
+{
+  "name": "goerr",
+  "version": "0.1.0",
+  "description": "handle throwing errors in golang way.",
+  "main": "./dist/index.js",
+  "types": "./types",
+  "scripts": {
+    "build": "tacer-script build",
+    "test": "tacer-script test",
+    "test:watch": "tacer-script test:watch"
+  },
+  "author": "Idan Loo <im@siwei.lu>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "tacer-template-lib": "^0.5.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IdanLoo/goerr"
+  },
+  "keywords": [
+    "error",
+    "handling",
+    "node",
+    "golang"
+  ]
+}
