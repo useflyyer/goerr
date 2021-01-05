@@ -1,6 +1,6 @@
-export type Result<T> = [T, Error]
+export type Result<T> = [Error, T]
 
-export default function goerr<T>(func: () => T): Result<T>
+export default function goerr<T>(func: () => Promise<T>): Promise<Result<T>>
 export default function goerr<T>(promise: Promise<T>): Promise<Result<T>>
 export default function goerr(parameter: any): any {
   if (parameter instanceof Promise) {
@@ -9,8 +9,8 @@ export default function goerr(parameter: any): any {
 
   try {
     const result = parameter()
-    return [result, null]
+    return [null, result]
   } catch (err) {
-    return [null, err]
+    return [err, null]
   }
 }
