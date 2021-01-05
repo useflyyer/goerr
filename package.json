@@ -1,6 +1,6 @@
 {
   "name": "goerr",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "handle throwing errors in golang way.",
   "main": "./dist/index.js",
   "types": "./types",
