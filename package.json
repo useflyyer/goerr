@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "handle throwing errors in golang way.",
   "main": "./dist/index.js",
-  "types": "./types",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tacer-script build",
+    "build": "tsc",
     "test": "tacer-script test",
     "test:watch": "tacer-script test:watch"
   },

@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
-    "declaration": true,
-    "declarationDir": "./types",
     "target": "es6",
+    "module": "CommonJS",
+    "outDir": "dist",
+    "declaration": true,
     "esModuleInterop": true,
     "moduleResolution": "node"
   },
-  "include": ["**/*.ts"]
+  "include": ["src/"],
+  "exclude": ["src/**/*.test.ts"]
 }
