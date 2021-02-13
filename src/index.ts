@@ -1,22 +1,18 @@
-export type Result<T> = [Error, T]
+export type Result<T, E extends Error> = [T, E | null];
 
-export default function goerr<T>(func: () => T): Result<T>
-export default function goerr<T>(promise: PromiseLike<T>): Promise<Result<T>>
-export default function goerr<T>(
-  asyncFunc: () => Promise<T>
-): Promise<Result<T>>
+export default function goerr<T, E extends Error>(func: () => T): Result<T, E>;
+export default function goerr<T, E extends Error>(promise: PromiseLike<T>): Promise<Result<T, E>>;
+export default function goerr<T, E extends Error>(asyncFunc: () => Promise<T>): Promise<Result<T, E>>;
 
 export default function goerr(parameter: any): any {
-  if ('then' in parameter && 'catch' in parameter) {
-    return parameter
-      .then((r: any) => [null, r])
-      .catch((err: Error) => [err, null])
+  if ("then" in parameter && "catch" in parameter) {
+    return parameter.then((r: any) => [r, null]).catch((err: Error) => [null, err]);
   }
 
   try {
-    const result = parameter()
-    return result instanceof Promise ? goerr(result) : [null, result]
+    const result = parameter();
+    return result instanceof Promise ? goerr(result) : [result, null];
   } catch (err) {
-    return [err, null]
+    return [null, err];
   }
 }
