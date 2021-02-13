@@ -6,6 +6,7 @@
     "declaration": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
+    "skipLibCheck": true,
     "alwaysStrict": true,
     "strict": true,
     "strictNullChecks": true,
@@ -14,11 +15,10 @@
     "strictBindCallApply": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "noUncheckedIndexedAccess": true,
+    // "noUncheckedIndexedAccess": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "preserveConstEnums": true,
   },
   "include": ["src/"],
-  "exclude": ["src/**/*.test.ts"]
 }
