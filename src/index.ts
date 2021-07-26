@@ -1,4 +1,4 @@
-export type Result<T, E extends Error> = [T, E | null];
+export type Result<T, E extends Error> = [T | null, E | null];
 
 export function goerr<T, E extends Error>(func: () => T): Result<T, E>;
 export function goerr<T, E extends Error>(promise: PromiseLike<T>): Promise<Result<T, E>>;
